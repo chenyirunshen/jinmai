@@ -89,7 +89,7 @@
 
   /* 产品灯箱预览 */
   (function () {
-    var imgs = Array.prototype.slice.call(document.querySelectorAll('.gallery figure img, .series-photo img, .product-card .card-img img'));
+    var imgs = Array.prototype.slice.call(document.querySelectorAll('.gallery figure img, .series-photo img, .product-card .card-img img, .factory-grid a img'));
     if (!imgs.length) return;
 
     // 构建灯箱 DOM

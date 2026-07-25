@@ -877,3 +877,10 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 980px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } .topbar .lead-left { display: none; } }
+
+/* ===================== 工厂实拍画廊 ===================== */
+.factory-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.factory-grid a { display: block; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); cursor: zoom-in; }
+.factory-grid a img { width: 100%; height: auto; display: block; transition: transform .35s ease; }
+.factory-grid a:hover img { transform: scale(1.03); }
+@media (max-width: 640px) { .factory-grid { grid-template-columns: 1fr; } }
