@@ -143,6 +143,11 @@
     var cards = Array.prototype.slice.call(document.querySelectorAll('.product-card[data-category]'));
     if (!btns.length || !cards.length) return;
 
+    // 没有 card-body 的卡片视为纯展示卡（不裁切、不加文字）
+    cards.forEach(function (card) {
+      if (!card.querySelector('.card-body')) card.classList.add('plain');
+    });
+
     function apply(filter) {
       cards.forEach(function (card) {
         var match = filter === 'all' || card.getAttribute('data-category') === filter;
