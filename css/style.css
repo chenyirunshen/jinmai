@@ -765,6 +765,84 @@ img { max-width: 100%; display: block; }
 .series-body .tag { display: inline-block; font-size: 12.5px; color: var(--primary-d); background: rgba(47,93,58,.08); padding: 4px 12px; border-radius: 999px; margin-right: 6px; margin-bottom: 6px; }
 @media (max-width: 980px) { .series-row, .series-row.reverse { grid-template-columns: 1fr; } .series-photo { aspect-ratio: 16/9; } .series-body { padding: 28px 26px; } }
 
+/* ===================== 产品图册 ===================== */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.filter-sidebar { position: sticky; top: 96px; }
+.filter-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+}
+.filter-block h3 { font-size: 16px; margin: 0 0 16px; }
+.filter-group h4 {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 12px;
+}
+.filter-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 14px;
+  margin-bottom: 8px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .2s;
+}
+.filter-btn:last-child { margin-bottom: 0; }
+.filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+.filter-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.product-card .card-img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.product-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.product-card:hover .card-img img { transform: scale(1.04); }
+.card-body { padding: 18px 18px 20px; }
+.card-body h3 { padding: 0; font-size: 16px; line-height: 1.45; margin: 0 0 8px; }
+.card-body p.price { padding: 0; font-size: 13.5px; color: var(--faint); margin: 0 0 14px; }
+.btn-sm { padding: 9px 18px; font-size: 13.5px; }
+.product-card.is-hidden { display: none; }
+
+@media (max-width: 980px) {
+  .catalog-layout { grid-template-columns: 1fr; gap: 24px; }
+  .filter-sidebar { position: static; }
+  .filter-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filter-group h4 { width: 100%; }
+  .filter-btn { width: auto; flex: 1 1 auto; margin-bottom: 0; text-align: center; }
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}
+
 /* ===================== 灯箱 ===================== */
 .lightbox { position: fixed; inset: 0; background: rgba(20,22,18,.92); display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px; opacity: 0; transition: opacity .25s; }
 .lightbox.open { display: flex; opacity: 1; }

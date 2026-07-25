@@ -89,7 +89,7 @@
 
   /* 产品灯箱预览 */
   (function () {
-    var imgs = Array.prototype.slice.call(document.querySelectorAll('.gallery figure img, .series-photo img'));
+    var imgs = Array.prototype.slice.call(document.querySelectorAll('.gallery figure img, .series-photo img, .product-card .card-img img'));
     if (!imgs.length) return;
 
     // 构建灯箱 DOM
@@ -134,6 +134,28 @@
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') show(idx - 1);
       else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  })();
+
+  /* 产品图册分类筛选 */
+  (function () {
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.product-card[data-category]'));
+    if (!btns.length || !cards.length) return;
+
+    function apply(filter) {
+      cards.forEach(function (card) {
+        var match = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.classList.toggle('is-hidden', !match);
+      });
+    }
+
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        apply(btn.getAttribute('data-filter'));
+      });
     });
   })();
 })();
