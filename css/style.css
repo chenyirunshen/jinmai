@@ -582,6 +582,14 @@ img { max-width: 100%; display: block; }
 }
 .field textarea { resize: vertical; min-height: 120px; }
 .form-note { font-size: 13px; color: var(--faint); margin-top: 4px; }
+/* 金数据表单嵌入 */
+.jinmai-form {
+  width: 100%;
+  min-height: 800px;
+  border: 0;
+  border-radius: 12px;
+  background: #fcfbf8;
+}
 .form-msg {
   display: none;
   padding: 12px 16px;
