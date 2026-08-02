@@ -155,6 +155,7 @@ img { max-width: 100%; display: block; }
 .brand .mark {
   width: 38px; height: 38px;
   flex: 0 0 auto;
+  object-fit: contain;
 }
 .brand small {
   display: block;
