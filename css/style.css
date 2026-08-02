@@ -376,6 +376,11 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
+.split-visual .logo-hero {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
 .list-check { list-style: none; padding: 0; margin: 18px 0 0; }
 .list-check li {
   position: relative;
