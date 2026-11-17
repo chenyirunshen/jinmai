@@ -1,0 +1,308 @@
+[
+  {
+    "category": "dahlia",
+    "code": "DA-01",
+    "name": "Blush",
+    "zh": "浅藕粉",
+    "image": "real/dahlia/dahlia-01.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-02",
+    "name": "Ochre",
+    "zh": "姜黄",
+    "image": "real/dahlia/dahlia-02.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-03",
+    "name": "Rose pink",
+    "zh": "玫粉",
+    "image": "real/dahlia/dahlia-03.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-04",
+    "name": "Burnt orange",
+    "zh": "暖橙",
+    "image": "real/dahlia/dahlia-04.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-05",
+    "name": "Burgundy",
+    "zh": "酒红",
+    "image": "real/dahlia/dahlia-05.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-06",
+    "name": "Ivory",
+    "zh": "象牙白",
+    "image": "real/dahlia/dahlia-06.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-07",
+    "name": "Midnight blue",
+    "zh": "深蓝",
+    "image": "real/dahlia/dahlia-07.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-08",
+    "name": "Mauve",
+    "zh": "灰紫",
+    "image": "real/dahlia/dahlia-08.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-09",
+    "name": "Soft pink",
+    "zh": "柔粉",
+    "image": "real/dahlia/dahlia-09.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-10",
+    "name": "Antique brown",
+    "zh": "复古棕",
+    "image": "real/dahlia/dahlia-10.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-11",
+    "name": "Cream",
+    "zh": "奶油白",
+    "image": "real/dahlia/dahlia-11.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-12",
+    "name": "Dusty blue",
+    "zh": "雾蓝",
+    "image": "real/dahlia/dahlia-12.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-13",
+    "name": "Botanical green",
+    "zh": "草木绿",
+    "image": "real/dahlia/dahlia-13.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-14",
+    "name": "Crimson",
+    "zh": "正红",
+    "image": "real/dahlia/dahlia-14.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-15",
+    "name": "White",
+    "zh": "纯白",
+    "image": "real/dahlia/dahlia-15.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "dahlia",
+    "code": "DA-16",
+    "name": "Blush & cream",
+    "zh": "粉白",
+    "image": "real/dahlia/dahlia-16.jpg",
+    "type": "7-head dahlia",
+    "typezh": "7头大丽花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-01",
+    "name": "White & green",
+    "zh": "白绿",
+    "image": "real/hydrangea/hydrangea-01.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-02",
+    "name": "Champagne",
+    "zh": "香槟",
+    "image": "real/hydrangea/hydrangea-02.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-03",
+    "name": "Lavender blush",
+    "zh": "浅紫粉",
+    "image": "real/hydrangea/hydrangea-03.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-04",
+    "name": "Violet",
+    "zh": "紫色",
+    "image": "real/hydrangea/hydrangea-04.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-05",
+    "name": "Autumn orange",
+    "zh": "秋橙",
+    "image": "real/hydrangea/hydrangea-05.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-06",
+    "name": "Dusty rose",
+    "zh": "复古粉",
+    "image": "real/hydrangea/hydrangea-06.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-07",
+    "name": "Burgundy",
+    "zh": "酒红",
+    "image": "real/hydrangea/hydrangea-07.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "hydrangea",
+    "code": "HY-08",
+    "name": "Blue",
+    "zh": "蓝色",
+    "image": "real/hydrangea/hydrangea-08.jpg",
+    "type": "Hydrangea bouquet",
+    "typezh": "绣球手捧花"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-01",
+    "name": "Burgundy",
+    "zh": "酒红",
+    "image": "real/miziguo/miziguo-01.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-02",
+    "name": "Peach",
+    "zh": "蜜桃",
+    "image": "real/miziguo/miziguo-02.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-03",
+    "name": "White",
+    "zh": "白色",
+    "image": "real/miziguo/miziguo-03.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-04",
+    "name": "Antique rose",
+    "zh": "复古玫瑰",
+    "image": "real/miziguo/miziguo-04.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-05",
+    "name": "Red",
+    "zh": "红色",
+    "image": "real/miziguo/miziguo-05.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-06",
+    "name": "Blush",
+    "zh": "浅粉",
+    "image": "real/miziguo/miziguo-06.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-07",
+    "name": "Dark blue",
+    "zh": "深蓝",
+    "image": "real/miziguo/miziguo-07.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-08",
+    "name": "Mustard",
+    "zh": "芥黄",
+    "image": "real/miziguo/miziguo-08.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-09",
+    "name": "Pale yellow",
+    "zh": "浅黄",
+    "image": "real/miziguo/miziguo-09.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  },
+  {
+    "category": "miziguo",
+    "code": "MB-10",
+    "name": "Orange",
+    "zh": "橙色",
+    "image": "real/miziguo/miziguo-10.jpg",
+    "type": "Mizi berry spray",
+    "typezh": "米籽果花枝"
+  }
+]
