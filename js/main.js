@@ -15,21 +15,49 @@
     let preference='';try{preference=localStorage.getItem('jm_lang')||'';}catch(_){}
     if(preference==='en'||(!preference&&!/^zh/i.test(navigator.language||'en'))){location.replace('en/index.html'+location.search+location.hash);return;}
   }
-  const filters=[...document.querySelectorAll('.filter')],cards=[...document.querySelectorAll('.product[data-category]')];
-  let selectedCategory='all';
+  const filters=[...document.querySelectorAll('.filter')];
+  const cards=[...document.querySelectorAll('.catalog-grid .product[data-category]')];
   const search=document.querySelector('#product-search');
-  function filter(category,update){
-    if(!filters.some(b=>b.dataset.filter===category))category='all';selectedCategory=category;let count=0;const query=(search?.value||'').toLowerCase().trim();
-    filters.forEach(b=>{const selected=b.dataset.filter===category;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));});
-    cards.forEach(c=>{c.hidden=(category!=='all'&&c.dataset.category!==category)||(query&&!((c.dataset.search||c.textContent).toLowerCase().includes(query)));if(!c.hidden)count++;});
-    const result=document.querySelector('#result-count');if(result)result.textContent=text(count+' products',count+' 款产品');
-    const empty=document.querySelector('#no-results');if(empty)empty.hidden=count!==0;
-    if(update && location.protocol!=='file:'){const url=new URL(location.href);if(category==='all')url.searchParams.delete('collection');else url.searchParams.set('collection',category);history.replaceState(null,'',url);}
+  const finish=document.querySelector('#finish-filter');
+  const more=document.querySelector('#load-more');
+  let selectedCategory='all',limit=24;
+  function filter(category,update,reset=true){
+    if(category==='miziguo')category='botanical';
+    if(!filters.some(b=>b.dataset.filter===category))category='all';
+    selectedCategory=category;if(reset)limit=24;
+    const query=(search?.value||'').toLowerCase().trim();
+    const tokens=query.split(/\s+/).filter(Boolean), palette=finish?.value||'all';
+    filters.forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+    const matches=cards.filter(c=>{
+      const haystack=(c.dataset.search||c.textContent).toLowerCase();
+      return (category==='all'||c.dataset.category===category)&&(palette==='all'||c.dataset.finish===palette)&&tokens.every(token=>haystack.includes(token));
+    });
+    document.querySelector('.catalog-grid')?.classList.toggle('single-result',matches.length===1);
+    const visible=new Set(matches.slice(0,limit));cards.forEach(c=>{c.hidden=!visible.has(c);});
+    const result=document.querySelector('#result-count');
+    if(result)result.textContent=text('Showing '+Math.min(limit,matches.length)+' of '+matches.length+' entries','显示 '+Math.min(limit,matches.length)+' / '+matches.length+' 项条目');
+    const empty=document.querySelector('#no-results');if(empty)empty.hidden=matches.length!==0;
+    if(more)more.hidden=matches.length<=limit;
+    if(update && location.protocol!=='file:'){
+      const url=new URL(location.href);
+      for(const [key,value] of [['collection',category==='all'?'':category],['q',query],['finish',palette==='all'?'':palette]]){
+        if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
+      }
+      history.replaceState(null,'',url);
+    }
   }
-  search?.addEventListener('input',()=>filter(selectedCategory,false));
-  if(filters.length){filter(new URLSearchParams(location.search).get('collection')||'all',false);filters.forEach(b=>b.addEventListener('click',()=>filter(b.dataset.filter,true)));}
+  if(filters.length){
+    const params=new URLSearchParams(location.search);
+    if(search)search.value=(params.get('q')||'').slice(0,200);
+    if(finish&&['gold','autumn'].includes(params.get('finish')))finish.value=params.get('finish');
+    filter(params.get('collection')||'all',false);
+    filters.forEach(b=>b.addEventListener('click',()=>filter(b.dataset.filter,true)));
+    search?.addEventListener('input',()=>filter(selectedCategory,true));
+    finish?.addEventListener('change',()=>filter(selectedCategory,true));
+    more?.addEventListener('click',()=>{limit+=24;filter(selectedCategory,false,false);});
+  }
   const dialog=document.querySelector('#image-dialog');let lastPreview;
-  document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>{lastPreview=b;dialog.querySelector('img').src=b.dataset.preview;dialog.querySelector('img').alt=b.dataset.caption;dialog.querySelector('p').textContent=b.dataset.caption;dialog.showModal();document.body.style.overflow='hidden';}));
+  document.querySelectorAll('[data-preview]').forEach(b=>b.addEventListener('click',()=>{lastPreview=b;dialog.querySelector('img').src=b.dataset.preview;dialog.querySelector('img').alt=b.dataset.caption;dialog.querySelector('p').textContent=b.dataset.caption;const original=dialog.querySelector('#preview-source');if(original)original.href=b.dataset.preview;const enquiry=dialog.querySelector('#preview-enquiry');if(enquiry){enquiry.hidden=!b.dataset.enquiry;enquiry.href=b.dataset.enquiry||'#';}const pdf=dialog.querySelector('#preview-pdf');if(pdf){pdf.hidden=!b.dataset.pdf;pdf.href=b.dataset.pdf||'#';}dialog.showModal();document.body.style.overflow='hidden';}));
   dialog?.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
   dialog?.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close();});
   dialog?.addEventListener('close',()=>{document.body.style.overflow='';lastPreview?.focus();});
